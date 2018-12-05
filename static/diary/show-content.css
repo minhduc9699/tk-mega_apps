@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  font-family: "Roboto" !important;
+  font-weight: 500;
+  font-size: 13px;
+  color: white; }
+
+.background-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(1, 2, 3, 0.8); }
+
+.show-panel {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 45%;
+  max-height: 700px;
+  background: #AA6046;
+  border: 0px;
+  border-radius: 8px; }
+  .show-panel .title {
+    padding: 20px 20px 10px 20px;
+    width: 100%; }
+    .show-panel .title h3 {
+      font-size: 25px;
+      font-weight: 400; }
+    .show-panel .title .icon-items {
+      padding: 0;
+      margin-top: 5px;
+      height: 0; }
+      .show-panel .title .icon-items img {
+        height: 20px;
+        width: 20px; }
+
+.content-panel {
+  color: black;
+  width: 98%;
+  height: 90%;
+  background: #cccccc;
+  border: 0px;
+  border-radius: 8px;
+  padding: 0px 20px;
+  margin-bottom: 10px; }
+  .content-panel .user-info {
+    margin-top: 10px; }
+    .content-panel .user-info p {
+      margin: 0;
+      padding: 0; }
+  .content-panel .content .textbox p {
+    font-weight: 480;
+    margin-top: 18px;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 18px; }
+  .content-panel .content .textbox ul li {
+    margin-top: 0px;
+    list-style-type: none; }
+  .content-panel .content .textbox .note-text p {
+    font-size: 14px;
+    font-weight: 600; }

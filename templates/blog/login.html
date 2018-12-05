@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'image/giot_nuoc.png' %}" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title>Oil Flow</title>
+</head>
+<body>
+<div id="background" class="d-flex justify-content-between ">
+    <div id="picture" class="d-flex align-items-end">
+        <!-- <img src="../static/image/oil_fill.png"  alt=""> -->
+    </div>
+    <div class="login-box d-flex align-items-center">
+        <div id="login-box" class="col-9 d-flex flex-wrap justify-content-center">
+            <div class="header w-100 d-flex justify-content-end align-items-center">
+                <span class="dot1"></span>
+                <span class="dot2"></span>
+                <span class="dot3"></span>
+            </div>
+            <div class="logo h-10 d-flex justify-content-center">
+                <div class="logo d-flex justify-content-center">
+                    <img class="image" src="../static/image/Untitled-1.png" alt="">
+                </div>
+            </div>
+            <div id="user-box" class="d-flex align-items-center d-flex justify-content-center">
+                <form class="login-form d-flex justify-content-center flex-wrap" method="post">
+                    {% csrf_token %}
+                    <div id="textbox">
+                        <p>Username</p>
+                        <!-- <img src="../static/Icons/2x/baseline_person_white_18dp.png" alt=""> -->
+                        {{form.username}}                        
+                    </div>
+
+                    <div id="textbox">
+                        <p>Passworrd</p>
+                        <!-- <img src="../static/Icons/2x/baseline_lock_white_18dp.png" alt=""> -->
+                        {{form.password}}
+                    </div>
+
+                    <div id="check_box">
+                            {{form.remember_me}}
+                            </p>Remember me</p>
+                    </div>
+                    <p id="err" class="text-secondary"></p>
+                        {% if messages %}
+                        {% for message in messages %}
+                    <h6 class="{{ message.tags }}">{{ message }}</h6>
+                        {% endfor %}
+                        {% endif %}
+
+                    <div id="button" class="  d-flex justify-content-end"> 
+                        <input type="Submit" name ="Login" class= "btn  custom-btn" value="Login">
+                    </div>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+</div>
+</body>
+</html>

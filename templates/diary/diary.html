@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js" ></script>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- FLATPICKR -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
+  <!-- CKEDITOR -->
+  <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'diary/diary.css' %}">
+  <script type="text/javascript" src="{% static 'diary/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/diary-form.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/ajax.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/button-add.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/course.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/classroom.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/session.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/diaries.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/edit-delete-diary.js' %}"></script>
+  <script type="text/javascript" src="{% static 'diary/animation.js' %}"></script>
+  
+
+</head>
+<body>
+  <div class="bg-img">
+    <nav class="navbar w-100 shadow light-brown">
+      <img class="" src="/static/diary/logo.png" alt="" width="3%">
+      <a class="btn-logout"href="{% url 'login:logout' %}">Log out</a>
+    </nav>
+      <div id="body_page" class="row mt-5">
+        <div id="left_body" class="col-3">
+          <div class="row" style="height: 70px;">
+            <div class="col-1"></div>
+            <button id="btn_add" class="row dark-brown col-7 align-items-center">
+              <!-- <div class="col-1"></div> -->
+              <img class="" id="icon_add" src="/static/diary/Icons/icon.png">
+              <span class="col-12" style="color:#DA9E8A">Add</span>
+              <!-- <div class="col-1"></div> -->
+            </button>
+            <div class="col-3"></div>
+          </div>
+
+          <div id="courses" class="mt-5">
+            <!-- <div class="light-brown radius-right" style="height: 70px;"></div> -->
+          </div>
+
+
+        </div>
+        <div id="right_body" class="col-9 row">
+          <div class="col-1"></div>
+          <div class="col-11" id="body_right">
+            <div id="course_name"></div>
+            <div class="d-flex flex-wrap" id="classrooms"></div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="add-diary">
+    <div id="" class="add-diary-box">
+      <h1>Add new diary</h1>
+      <div class="role-slt">
+        <p>Role</p>
+        <select name="" id="slt_role">
+          <option value="">instructor</option>
+          <option value="">mentor</option>
+          <option value="">coach</option>
+        </select>
+        <span id="add_failed" style="color:white" class="invisible">You aren't teacher of this classroom, please select another classroom.</span>
+      </div>
+      <div id="" class=" input-content d-flex flex-wrap justify-content-start">
+        <div id="" class="textbox-1">
+          <p>Course name</p>
+          <select id="slt_course" style="width: 100%" class="mytext-1"> 
+
+          </select>
+        
+        </div>
+        <div id="" class="textbox-1">
+          <p>Class name</p>
+          <select id="slt_classroom" style="width: 100%" class="mytext-1" disabled> 
+            <option value="">...</option>
+          </select>
+        
+        </div>
+        <div id="" class="textbox-1">
+            <p>Session no</p>
+            <input id="session_no_diary" type="number" name="Session-no" class="mytext-2">
+        </div>     
+        <div id="" class="textbox-1">
+            <p>Session name</p>
+            <input id="session_name_diary" type="text" name="Session-name" class="mytext-3">
+        </div>    
+        <div id="" class="textbox-1">
+            <p>Date</p>
+            <input id="diary_date" type="text" name="Date"class="mytext-4">
+        </div>
+      </div>
+      <div id="" class="overview-content">
+        <p>Overview</p>
+        <textarea name="overview" id="editor_overview" cols="30" rows="10" required></textarea>
+        
+      </div>
+      <div id="" class="cirriculum-content" style="margin-top: 15px;">
+        <p>Curriculum</p>
+        <textarea name="" id="editor_curriculum" cols="30" rows="10"></textarea>
+        
+      </div>
+      <div id="" class="student-note-content" style="margin-top: 15px;">
+        <p style="margin:8px 0px 0px 20px; color: white; font-style: bold"> Note for each student</p>
+        <div id="note_for_each_student" style="">
+          
+        </div>
+        <div class="save-button d-flex justify-content-end">
+          <!-- <input id ="btn_add_more" type="Submit" name ="Add more" class= "btn custom-btn" value="Add more">
+          <span id="success_noti" style="display: none; color: white">Added successfully!</span> -->
+          <span style="color: white; padding: 14px 20px 0px 0px;" id="fields" class="invisible">Fields are required.</span>
+          <span style="color: white; padding: 14px 20px 0px 0px;" id="session" class="invisible">Session has already.</span>
+          <div>
+            <input id ="btn_cancel_diary" type="Submit" name ="Cancel" class= "btn mr-1 custom-btn" value="Cancel">
+            <input id ="btn_save_diary" type="Submit" name ="Save" class= "btn custom-btn" value="Save">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loading" id="loading_indicator">Loading&#8230;</div>
+</body>
+</html>

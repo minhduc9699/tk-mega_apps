@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Add-diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/diary/static/add-diary.css">
+</head>
+<body>
+<!-- <div id="" class="background d-flex align-items-center">
+  <div id="" class=" background-filter d-flex justify-content-center d-flex align-items-center">
+    <div id="" class="add-diary-box">
+      <h1>Add new diary</h1>
+      <div id="" class=" input-content d-flex justify-content-start">
+        <div id="" class="textbox">
+          <p>Class name</p>
+          <input type="text" name="Classname" class="mytext-1">
+        </div>
+        <div id="" class="textbox">
+            <p>Session no</p>
+            <input type="text" name="Session-no" class="mytext-2">
+        </div>     
+        <div id="" class="textbox">
+            <p>Session name</p>
+            <input type="text" name="Session-name" class="mytext-3">
+        </div>    
+        <div id="" class="textbox">
+            <p>Date</p>
+            <input type="text" name="Date"class="mytext-4">
+        </div>
+      </div>
+      <div id="" class="overview-content">
+        <p>Overview</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+      <div id="" class="cirriculum-content">
+        <p>Curriculum</p>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+      <div id="" class="student-note-content">
+        <div id="" class="student">
+          <p> Note for each student</p>
+          <select name="" id="" disabled="disabled">
+              <option value=""><p>BA TRAM</p></option>
+          </select>
+          <button type="button" class="custom-btn btn">Add more</button>
+        </div>
+      <div id="" class="student-note">
+        <textarea name="" id="" cols="30" rows="5"></textarea>
+      </div>
+      <div id="" class="save-button d-flex justify-content-end">
+          <input type="Submit" name ="Save" class= "btn  custom-btn" value="Save">
+      </div>
+      </div>
+    </div>
+  </div>
+  </div> -->
+
+  <form action="" method="post">{% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <input type="submit" value="Create" />
+  </form>
+  
+</body>
+</html>

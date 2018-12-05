@@ -1,0 +1,129 @@
+#control_panel {
+  display: flex;
+  justify-items: center;
+}
+
+/* #time {
+  line-height: 38px;
+} */
+
+
+#check_circle {
+  transition: 0.3s;
+  height: 35px;
+  width: 35px;
+  padding-left: 3px;
+  padding-top: 3px;
+  color: black;
+}
+
+
+#times_circle {
+  transition: 0.3s;
+  height: 35px;
+  width: 35px;
+  padding-left: 2px;
+  padding-top: 3px;
+  color: black;
+}
+
+
+#slt_classrooms {
+  margin-top: 0px !important;
+  height: 38px !important;
+}
+
+#input_grade {
+  width: 70px;
+  padding-left: 8px !important
+}
+
+#btn_grade {
+  width: 100px;
+}
+
+#tbl_grade{
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 500px;
+  float: left;
+}
+
+#tbl_grade td {
+  min-width: 50px;
+}
+
+#tbl_grade th {
+  min-width: 50px;
+}
+
+#tbl_grade_row_sessions th:first-child,
+#tbl_grade_body td:first-child {
+  width: 160px !important;
+  text-align: left !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  border-width: 2px;
+}
+
+/* #tbl_grade_row_sessions > th {
+  height: 30px;
+} */
+
+#tbl_grade_row_sessions th:nth-child(n + 2),
+#tbl_grade_body td:nth-child(n + 2) {
+  margin-right: 8px !important;
+  /* text-align: right !important; */
+  padding-right: 3px !important;
+  border-width: 2px;
+}
+
+#tbl_grade_row_sessions th:nth-child(n + 2),
+#tbl_grade_body {
+  text-align: right !important;
+}
+
+/* #tbl_grade_body {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  height: 500px;
+} */
+
+
+.grade {
+  margin: 4px !important;
+}
+
+.grade.changable {
+  cursor: pointer;
+}
+
+.grade.changable:hover,
+.grade.changable.highlight {
+  background-color: rgb(145, 145, 255);
+  transition: 0.05s;
+}
+
+#slt_classrooms,
+#input_grade {
+  border-radius: 5px;
+}
+
+tr {
+  width: 40px;
+  height: 30px;
+}
+
+body {
+  font-size: 15px !important;
+}
+
+/* .fas .fa-circle {
+  text-align: left !important;
+} */
+
+#loading_indicator {
+  display: block;
+}

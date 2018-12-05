@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'diary/style.css'%}">
+    <title>Login</title>
+</head>
+<body>
+<div id="background">
+    <div id="background-filter" class="d-flex justify-content-center align-items-center">
+    <div id="login-box" class="d-flex justify-content-center align-items-center col-6">
+        <div id="logo" class="col-6"></div>
+        <div id="user-box" class="d-flex align-items-center d-flex justify-content-center col-6">
+            {% if next %}
+            <form action="/login/?next={{next}}" class="login-form" method="post">
+            {% else %}
+            <form action="/login/" class="login-form" method="post">
+            {% endif %}
+                {% csrf_token %}
+                <div id="textbox">
+                    <img src="{% static 'diary/Icons/2x/baseline_person_white_18dp.png' %}" alt="">
+                    {{form.username}}                        
+                </div>
+
+                <div id="textbox">
+                    <img src="{% static 'diary/Icons/2x/baseline_lock_white_18dp.png' %}" alt="">
+                     {{form.password}}
+                </div>
+
+                <div id="check_box">
+                        {{form.remember_me}}
+                        </p>Remember me</p>
+                </div>
+                <p id="err" class="text-secondary"></p>
+                    {% if messages %}
+                    {% for message in messages %}
+                <h6 class="{{ message.tags }}">{{ message }}</h6>
+                    {% endfor %}
+                    {% endif %}
+
+                <div id="button" class="d-flex justify-content-end"> 
+                    <input type="Submit" name ="Login" class= "btn  custom-btn col-6" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
