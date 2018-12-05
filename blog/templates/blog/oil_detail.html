@@ -43,7 +43,7 @@
                 {% endif %}
               </div>
               <div class="d-flex align-items-center">
-                <a href=""> <img class="user" src="../../../static/Icons/avatar.png" style="max-width:70px" alt=""></a>
+                <a href=""> <img class="user" src="{% static 'blog/icons/avatar.png' %}" style="max-width:70px" alt=""></a>
               </div>
             <div id="logout-icon" class="logout d-flex align-items-center justify-content-center">
               <div id="logout-box" class="logout-box">
@@ -109,7 +109,7 @@
                             <span>Resource:<a href="{{oil_detail.resource}}" target="blank"> {{oil_detail.url_text}} </a></span>
                           {% endif %}
                         
-                          <p> likes  <button class="btn like"> <img id="btn_like" src="../../../static/Icons/round_thumb_up_black_18dp.png" style="width:28px"alt=""></button></p>
+                          <p> likes  <button class="btn like"> <img id="btn_like" src="{% static 'blog/icons/round_thumb_up_black_18dp.png' %}" style="width:28px"alt=""></button></p>
                          
                       </ol>
                     </div>
