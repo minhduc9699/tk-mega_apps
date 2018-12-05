@@ -10,11 +10,11 @@ $(document).ready( async () => {
   renderNumberLikes();
 })
 
+const base = window.location.origin;
+const path = window.location.pathname.split("/").pop();
+const fullLink = base + "/blog/like/" + path;
 
 const fetchLike = async () => {
-  const base = window.location.origin;
-  const path = window.location.pathname;
-  const fullLink = base + "/like" + path;
   const res = await $.ajax({
     url: fullLink,
     type: "GET"
@@ -26,9 +26,6 @@ const fetchLike = async () => {
 
 
 const postLike = async () => {
-  const base = window.location.origin;
-  const path = window.location.pathname;
-  const fullLink = base + "/like" + path;
   const res = await $.ajax({
     url: fullLink,
     type: "POST"

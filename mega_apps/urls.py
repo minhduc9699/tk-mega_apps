@@ -33,6 +33,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('diary/', include(diary_urls)),
     path('worm/', include(worm_urls)),
-    path('blog', include(blog_urls)),
+    path('blog/', include(blog_urls)),
     path('login/', include('login.urls')),
 ]
